@@ -8,7 +8,7 @@ variables:
   dockerRegistryServiceConnection: 'myacrcred'  # The service connection name for ACR
   imageRepository: 'app1/app1nginx'
   containerRegistry: 'aksdevopsacr.azurecr.io'  # Your ACR URL
-  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+  dockerfilePath: '$(Build.SourcesDirectory)/19-Azure-DevOps-with-AKS/19-01-Azure-DevOps-BuildandPush-to-ACR/Dockerfile'
   tag: '$(Build.BuildId)'
 
   # Agent VM image name
