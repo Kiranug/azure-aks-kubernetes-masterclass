@@ -43,9 +43,14 @@ stages:
     # Task-2: Copy files (Copy files from a source folder to target folder)
     # Source Directory: $(System.DefaultWorkingDirectory)/kube-manifests
     # Target Directory: $(Build.ArtifactStagingDirectory)
+    - script: |
+        echo "Build.SourcesDirectory: $(Build.DefaultWorkingDirectory)"
+        echo "Listing files in Build.DefaultWorkingDirectory:"
+        ls -la $(Build.DefaultWorkingDirectory)/19-Azure-DevOps-with-AKS/19-01-Azure-DevOps-BuildandPush-to-ACR/Git-Repository-files/
+      displayName: Print and List Files in Build.SourcesDirectory
     - task: CopyFiles@2
       inputs:
-        SourceFolder: '$(System.DefaultWorkingDirectory)/kube-manifests'
+        SourceFolder: '$(System.DefaultWorkingDirectory)/19-Azure-DevOps-with-AKS/19-01-Azure-DevOps-BuildandPush-to-ACR/Git-Repository-files/kube-manifests'
         Contents: '**'
         TargetFolder: '$(Build.ArtifactStagingDirectory)'
         OverWrite: true
