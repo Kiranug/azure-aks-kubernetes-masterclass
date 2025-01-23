@@ -20,7 +20,6 @@ stages:
   jobs:  
   - job: Build
     displayName: Build
-    pool: "Default"  # Ensure the job uses the Default agent pool
     steps:
     - task: Docker@2
       displayName: Build and push an image to container registry
