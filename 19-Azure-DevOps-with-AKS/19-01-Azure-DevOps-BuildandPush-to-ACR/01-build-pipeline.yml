@@ -22,6 +22,11 @@ stages:
   - job: Build
     displayName: Build
     steps:
+    - script: |
+        echo "Build.SourcesDirectory: $(Build.SourcesDirectory)"
+        echo "Listing files in Build.SourcesDirectory:"
+        ls -la $(Build.SourcesDirectory)
+      displayName: Print and List Files in Build.SourcesDirectory
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
