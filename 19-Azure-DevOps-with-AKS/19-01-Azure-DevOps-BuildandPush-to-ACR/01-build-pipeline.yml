@@ -46,7 +46,7 @@ stages:
     - script: |
         echo "Build.SourcesDirectory: $(Build.DefaultWorkingDirectory)"
         echo "Listing files in Build.DefaultWorkingDirectory:"
-        ls -la '$(Build.DefaultWorkingDirectory)/19-Azure-DevOps-with-AKS/19-01-Azure-DevOps-BuildandPush-to-ACR/Git-Repository-files/'
+        ls -la '$(Build.DefaultWorkingDirectory)/19-Azure-DevOps-with-AKS/'
       displayName: Print and List Files in Build.SourcesDirectory
     - task: CopyFiles@2
       inputs:
