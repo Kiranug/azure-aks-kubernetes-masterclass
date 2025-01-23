@@ -1,7 +1,7 @@
 trigger:
 - master
 
-pool: "Azure Pipelines"  # Use the Default agent pool
+#pool: "Azure Pipelines"  # Use the Default agent pool
 
 variables:
   # Use the service connection ID for ACR access
