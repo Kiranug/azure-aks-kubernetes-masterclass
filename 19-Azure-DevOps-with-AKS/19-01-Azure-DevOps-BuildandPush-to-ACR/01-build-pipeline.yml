@@ -1,7 +1,7 @@
 trigger:
 - master
 
-pool: "Default"
+pool: "Azure Pipelines"  # Use the Default agent pool
 
 variables:
   # Use the service connection ID for ACR access
@@ -20,8 +20,7 @@ stages:
   jobs:  
   - job: Build
     displayName: Build
-    pool:
-      vmImage: $(vmImageName)
+    pool: "Default"  # Ensure the job uses the Default agent pool
     steps:
     - task: Docker@2
       displayName: Build and push an image to container registry
