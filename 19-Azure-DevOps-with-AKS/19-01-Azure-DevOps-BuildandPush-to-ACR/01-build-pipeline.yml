@@ -1,6 +1,8 @@
 trigger:
 - master
 
+pool: "Default"
+
 variables:
   # Use the service connection ID for ACR access
   dockerRegistryServiceConnection: 'myacrcred'  # The service connection name for ACR
