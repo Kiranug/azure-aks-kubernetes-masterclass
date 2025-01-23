@@ -46,8 +46,8 @@ stages:
     - script: |
         echo "Build.SourcesDirectory: $(Build.DefaultWorkingDirectory)"
         echo "Listing files in Build.DefaultWorkingDirectory:"
-        ls -la '$(Build.DefaultWorkingDirectory)/19-Azure-DevOps-with-AKS/'
-      displayName: Print and List Files in Build.SourcesDirectory
+        ls -la '$(Build.DefaultWorkingDirectory)'
+      displayName: Print and List Files in Build.DefaultWorkingDirectory
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(System.DefaultWorkingDirectory)/19-Azure-DevOps-with-AKS/19-01-Azure-DevOps-BuildandPush-to-ACR/Git-Repository-files/kube-manifests'
