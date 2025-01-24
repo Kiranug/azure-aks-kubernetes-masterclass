@@ -27,7 +27,7 @@ metadata:
   labels:
     app: app1-nginx
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: app1-nginx
   ports:
@@ -43,7 +43,6 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: "your-ingress-domain.com"  # Use the Ingress Controller's public IP
       http:
         paths:
           - path: /
