@@ -27,12 +27,33 @@ metadata:
   labels:
     app: app1-nginx
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: app1-nginx
   ports:
     - port: 80
       targetPort: 80
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: your-ingress-domain.com  # Replace with your actual domain or use a wildcard
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: app1-nginx-loadbalancer-service
+                port:
+                  number: 80
+---
 
 
 
