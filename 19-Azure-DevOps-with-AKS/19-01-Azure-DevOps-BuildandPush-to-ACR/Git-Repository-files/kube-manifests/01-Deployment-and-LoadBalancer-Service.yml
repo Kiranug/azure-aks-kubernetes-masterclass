@@ -43,7 +43,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: "4.255.77.33"  # Use the Ingress Controller's public IP
+    - host: "your-ingress-domain.com"  # Use the Ingress Controller's public IP
       http:
         paths:
           - path: /
